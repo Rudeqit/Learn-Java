@@ -1,6 +1,6 @@
 package phoneBook;
 
-public abstract class User {
+public abstract class User implements CSV {
 	private int index;
 	private String name;
 	private String phoneNumber;
@@ -38,4 +38,16 @@ public abstract class User {
 		return name + " (index = " + index + ")" + ": " + phoneNumber;
 	}
 */
+
+	public String toCSV() {
+		return String.valueOf(this.index) + ";" + this.name + ";" + this.phoneNumber + '\n';
+	}
+
+	public void fromCSV(String str) {
+		String[] pieces = str.split(";");
+
+		this.index = Integer.valueOf(pieces[0]);
+		this.name = pieces[1];
+		this.phoneNumber = pieces[2];
+	}
 }
