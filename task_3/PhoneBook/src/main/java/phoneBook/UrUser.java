@@ -5,7 +5,7 @@ public class UrUser extends User {
 	static private int size = 1;
 
 	public UrUser() {
-		super("", "");
+		super("", ""); 	// It's for readUrFromFile()
 	}
 
 	public UrUser(String name, String phoneNumber, int inn) {
@@ -22,6 +22,10 @@ public class UrUser extends User {
 		this.inn = inn;
 	}
 
+	public String toString() {
+		return super.toString() + " \t" + inn;
+	}
+
 	public String toCSV() {
 		return String.valueOf(super.getIndex()) + ";" + super.getName() + ";" + super.getPhoneNumber() + ";" + String.valueOf(this.getINN()) +'\n';
 	}
@@ -32,11 +36,4 @@ public class UrUser extends User {
 		this.inn = Integer.valueOf(pieces[3]);
 	}
 
-/*
-	@Override
-	public String toString() {
-		// return super.toString + inn;
-		return this.getName() + " (index = " + this.getIndex() + ")" + ": " + this.getPhoneNumber() + ", " + inn;
-	}
-*/
 }

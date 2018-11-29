@@ -27,15 +27,13 @@ public class PhoneBook {
 		System.out.println("(#, Name, Phone number)");
 
 		for (FzUser fzUser : this.fzUser)
-			// System.out.println(fzUser.toString());	\\ It's not work sad() 
-			System.out.printf(" %d: %s \t%s\n", fzUser.getIndex(), fzUser.getName(), fzUser.getPhoneNumber());
+			System.out.println(fzUser.toString());
 
 		System.out.println("\nUrUser: ");
 		System.out.println("(#, Name, Phone number, INN)");
 
 		for (UrUser urUser : this.urUser)
-			// System.out.println(urUser.toString());
-			System.out.printf(" %d: %s \t%s \t%d\n", urUser.getIndex(), urUser.getName(), urUser.getPhoneNumber(), urUser.getINN());
+			System.out.println(urUser.toString());
 	}
 
 	public void writeFzInFile(String fileName) {

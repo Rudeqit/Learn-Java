@@ -33,11 +33,10 @@ public abstract class User implements CSV {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-/*
+
 	public String toString() {
-		return name + " (index = " + index + ")" + ": " + phoneNumber;
+		return " " + String.valueOf(this.index) + ": " + this.name + " \t" + this.phoneNumber;
 	}
-*/
 
 	public String toCSV() {
 		return String.valueOf(this.index) + ";" + this.name + ";" + this.phoneNumber + '\n';
